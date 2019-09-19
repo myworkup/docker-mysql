@@ -30,9 +30,11 @@ symbolic-links=0
 binlog_format       = ROW
 binlog_row_image    = FULL
 expire_logs_days    = 7
-binlog_expire_logs_seconds  = 604800
-log_bin             = /var/log/mysql/mysql-bin.log
+log_bin             = mysql-bin
 log_slave_updates   = 1
-
-log_slow_queries    = 3
+max_binlog_size     = 500M
+server_id           = master
+ 
+long_query_time     = 3
+slow_query_log      = 1
 slow_query_log_file = /var/log/mysql/mysql-slowquery.log
